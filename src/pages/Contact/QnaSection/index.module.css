@@ -1,0 +1,283 @@
+.container {
+  position: relative;
+  width: 100%;
+  
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    width: 100vw;
+    height: calc(100% + 70px);
+    transform: translate(-50vw, 0);
+    background-image: url(images/contact/qna_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  .inner {
+    padding: 40px 0 50px;
+  }
+
+  .title {
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .sub_title {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    word-break: keep-all;
+    margin: 0 0 40px;
+  }
+
+  .contact_form {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    height: 560px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+  
+  .contact_body {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .message_box_left,
+  .message_box_right {
+    width: fit-content;
+    position: relative;
+
+    .date {
+      right: -60px;
+      bottom: 0;
+    }
+  }
+
+  .left_message,  
+  .right_message {
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    background-color: #e2e2e2;
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    z-index: 5;
+    max-width: 200px;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-bottom: 5px solid #e2e2e2;
+      border-top: 5px solid transparent;
+      border-left: 5px solid #e2e2e2;
+      border-right: 5px solid transparent;
+      border-radius: 2px;
+      position: absolute;
+      left: -5px;
+      top: 0;
+      z-index: -1;
+      transform: rotate(190deg);
+    }
+  }
+
+  .name {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .date {
+    margin: 0;
+    font-size: 13px;
+    color: #333;
+    font-weight: 400;
+    position: absolute;
+    width: fit-content;
+  }
+
+  .message_box_right {
+    align-self: flex-end;
+
+    .name {
+      margin-left: auto;
+      width: fit-content;
+    }
+
+    .date {
+      left: -60px;
+      bottom: 0;
+    }
+  }
+
+  .right_message {
+    background-color: #474DE1;
+    color: #fff;
+
+    &::after {
+      border-left: 5px solid #474DE1;
+      border-bottom: 5px solid #474DE1;
+      right: -4px;
+      left: inherit;
+      transform: rotate(80deg);
+    }
+  }
+
+  .input_form {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #D4D4E8;
+    box-sizing: border-box;
+    padding: 12px 12px 12px 23px;
+    background-color: #F4F4FB;
+
+    input {
+      appearance: none;
+      border: 0;
+      flex: 1;
+      font-size: 18px;
+      font-weight: 400;
+      color: #111;
+      background-color: transparent;
+      padding: 0 16px 0 0;
+      height: inherit;
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+  }
+
+  .sent {
+    width: 36px;
+    height: 36px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .more {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto 0;
+    border-radius: 100px;
+    background-color: #474DE1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    padding:22px 19px 16px 19px;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @media screen and (min-width:992px) {
+    .contact_body {
+      padding: 0 3px 30px;
+    }
+
+    &:after {
+      height: calc(100% + 80px);
+      top: -80px;
+    }
+
+    .inner {
+      padding: 80px 0 70px;
+    }
+
+    .title {
+      font-size: 50px;
+    }
+
+    .sub_title {
+      font-size: 18px;
+      margin: 0 0 54px;
+      line-height: 30px;
+    }
+
+    .contact_form {
+      height: 650px;
+      border-radius: 40px;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .input_form {
+      border: 1px solid #D4D4E8;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 15px 15px 15px 20px;
+    }
+
+    .sent {
+      width: 40px;
+      height: 40px;
+    }
+
+    .more {
+      margin-top: 60px;
+      padding: 22px;
+      font-size: 18px;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .left_message,  
+    .right_message {
+      font-size: 20px;
+      padding: 8px 12px;
+      max-width: 800px;
+    }
+
+    .name {
+      font-size: 16px;
+      margin-bottom: 7px;
+    }
+  }
+}
